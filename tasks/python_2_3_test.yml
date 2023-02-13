@@ -1,6 +1,6 @@
 ---
 - name: Verify Python3 import
-  script: py3test.py
+  command: /usr/bin/python3 -c "import sys"
   register: py3test
   failed_when: False
   changed_when: False
