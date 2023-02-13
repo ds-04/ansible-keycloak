@@ -56,6 +56,17 @@
         - unzip
         - "{{ keycloak_dep_pyOpenSSL }}"
       become: yes
+      when: (ansible_facts['distribution'] != "Debian")
+
+    - name: install dependencies Debian 11
+      package:
+        name: "{{ item }}"
+      loop:
+        - default-jdk-headless
+        - python3-openssl
+        - unzip
+      become: yes
+      when: (ansible_facts['distribution'] == "Debian" and ansible_facts['distribution_major_version'] == "11")
 
     - name: create Keycloak service user/group
       user:
