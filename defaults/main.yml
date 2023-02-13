@@ -1,10 +1,12 @@
 ---
 ### Version and download settings
-keycloak_version: 7.0.0
+#https://github.com/keycloak/keycloak/releases/download/20.0.3/keycloak-20.0.3.zip
+keycloak_version: 20.0.3
 keycloak_archive: keycloak-{{ keycloak_version }}.zip
-keycloak_url: https://downloads.jboss.org/keycloak/{{
-              keycloak_version }}/{{ keycloak_archive }}
-keycloak_local_download_dest: "{{ \"~/keycloak_download\" | expanduser }}"
+keycloak_url: https://github.com/keycloak/keycloak/releases/download/{{keycloak_version }}/{{ keycloak_archive }}
+keycloak_sha1: 06000ac885776ea03898136ebd26cd95dc58edf7
+#keycloak_local_download_dest: "{{ \"~/keycloak_download\" | expanduser }}"
+keycloak_local_download_dest: /tmp
 
 ### Install location and service settings
 keycloak_dest: /opt/keycloak
