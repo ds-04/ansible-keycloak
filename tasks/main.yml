@@ -254,7 +254,7 @@
         owner: root
         group: root
         mode: 0755
-        become: yes
+      become: yes
 
     - name: configure sysconfig file for keycloak service
       template:
